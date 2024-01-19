@@ -41,6 +41,29 @@ const game = {
   },
 };
 
+//1. printing each player name with goal.
+const goals = game.scored;
+for (let i = 0; i < goals.length; i++) {
+  console.log(`Goal ${[i + 1]}: ${goals[i]}`);
+}
+for (const [i, player] of goals.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+//2. average of odds
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+//3. Printing odds to the console
+const obj = game.odds;
+for (const [team, odd] of Object.entries(obj)) {
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} : ${odd}`);
+}
+
 //creating player array for each team..
 const [players1, players2] = [...game.players];
 console.log(players1, players2);
