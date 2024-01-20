@@ -97,3 +97,65 @@ printGoals("davies", "muller");
 
 team1 < team2 && console.log("Team1 is more likely to win..");
 team1 > team2 && console.log("Team2 is more likely to win..");
+
+//Sets & Map
+console.log("SET____________-------------");
+//Set...
+
+const team1Players = new Set([
+  "Neuer",
+  "Pavard",
+  "Martinez",
+  "Alaba",
+  "Davies",
+  "Kimmich",
+  "Goretzka",
+  "Pavard",
+  "Martinez",
+  "Alaba",
+  "Davies",
+  "Kimmich",
+]);
+console.log(team1Players);
+console.log(team1Players.size); // length of set.
+team1Players.add("Ankit");
+team1Players.delete("Neuer");
+console.log(team1Players);
+
+const staff = ["waiter", "chief", "waiter", "manager", "waiter"];
+console.log(staff);
+
+const uniqeStaff = [...new Set(staff)]; // sets remove all the dublicate value from an array and create a unique set of array
+console.log(uniqeStaff);
+
+const name1 = "AnkitKumar"; // sets also itrates strings..
+const itreateName = [...new Set(name1)];
+console.log(itreateName);
+
+// Map
+console.log("_____________MAP_____________");
+//
+
+const rest = new Map();
+
+rest.set("Name", "Ankit Kumar");
+rest.set("Age", 21);
+console.log(rest);
+
+rest
+  .set("friends", ["Nikhil", "rohit", "Rahul"])
+  .set(true, "Singe")
+  .set(false, "Marrid");
+
+console.log(rest);
+
+console.log(rest.has("friends"));
+rest.delete(false);
+console.log(rest);
+
+//using arrays as a key
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+console.log(arr);
+console.log(rest.size);
