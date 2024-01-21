@@ -159,3 +159,76 @@ const arr = [1, 2];
 rest.set(arr, "Test");
 console.log(arr);
 console.log(rest.size);
+
+//Challenge 3____
+
+const gameEvents = new Map([
+  [17, "⚽ Goal"],
+  [36, "Substitution"],
+  [47, "⚽ Goal"],
+  [61, "Substitution"],
+  [64, "Yellow card"],
+  [69, "Red Card"],
+  [70, "Substitution"],
+  [72, "Substitution"],
+  [76, "⚽ Goal"],
+  [80, "⚽ Goal"],
+  [92, "Yellow card"],
+]);
+
+//1 array of events
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//2. Deleting 64
+gameEvents.delete(64);
+console.log(gameEvents);
+
+//3. printing avarage of events
+const avarageOfEvents = function () {
+  const length = gameEvents.size;
+  console.log(length);
+  const event = 90 / length;
+  console.log(`An event happened, on average, every ${event} minutes`);
+};
+avarageOfEvents();
+//optimize way of printing avarage of events
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+
+//4.
+for (const [time, eve] of gameEvents) {
+  const halfs = time > 45 && time < 90 ? "second half" : "first half";
+  console.log(`[${halfs}] ${time}: ${eve}`);
+}
+
+// working with srtings
+
+const airline = "Air india ";
+const plane = "B732";
+
+console.log(airline[0]);
+console.log(plane);
+console.log(plane[3]);
+
+//slice method
+
+console.log(airline.slice(2));
+console.log(airline.slice(2, 8));
+console.log(plane.slice(-2));
+
+const checkSeat = function (s) {
+  // B and E are middle seat
+  const seat = s.slice(-1);
+  if (seat === "B" || seat === "E") {
+    console.log("you got a middle seat.");
+  } else {
+    console.log("You are lucky");
+  }
+};
+
+checkSeat("45B");
+checkSeat("4E");
+checkSeat("45D");
+checkSeat("4C");
