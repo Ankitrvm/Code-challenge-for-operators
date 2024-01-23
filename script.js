@@ -205,7 +205,7 @@ for (const [time, eve] of gameEvents) {
 
 // working with srtings
 
-const airline = "Air india ";
+const airline = "Air india";
 const plane = "B732";
 
 console.log(airline[0]);
@@ -232,3 +232,25 @@ checkSeat("45B");
 checkSeat("4E");
 checkSeat("45D");
 checkSeat("4C");
+
+// upper case & lower Case
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+//
+console.log(airline.startsWith("Air"));
+console.log(airline.endsWith("india"));
+
+// replacing string..
+const boarding = "Boarding stars for flight E398, you have to board door no 4";
+console.log(boarding.replace("door", "gate"));
+const price = "155.4$";
+console.log(price.replace("$", "₹"));
+//
+const passangerName = (str) => {
+  const lower = str.toLowerCase();
+  console.log(lower);
+  const correct = lower[0].toUpperCase() + lower.slice(1);
+  console.log(correct);
+};
+passangerName("aNkit");
+passangerName("RoHit");
