@@ -254,3 +254,76 @@ const passangerName = (str) => {
 };
 passangerName("aNkit");
 passangerName("RoHit");
+
+//split method
+const mass = "My+name+is+ankit+kumar";
+console.log(mass.split("+"));
+console.log("A N K I T".split(" "));
+
+//split and join
+const [firstName, lastName] = "Ankit Kumar".split(" ");
+console.log(firstName);
+const nName = ["Mr", firstName, lastName].join(" ");
+console.log(nName);
+
+//Name upper case.
+
+const nameUpperCase = function (Namee) {
+  const str = Namee.split(" ");
+  const newName = [];
+  // console.log(str);
+  for (const n of str) {
+    // newName.push(n[0].toUpperCase() + n.slice(1));
+    newName.push(n.replace(n[0], n[0].toUpperCase())); // captlize name using replace method
+  }
+  console.log(newName.join(" "));
+};
+nameUpperCase("ankit kuamr singh");
+nameUpperCase("aman kuamr singh");
+
+// Pading to strings
+
+const msg = "flight is delayed. ";
+
+console.log(msg.padStart(25, "+").padEnd(35, "+"));
+console.log("Ankit Kuamr".padStart(15, "#").padEnd(30, "@"));
+
+const cardNumber = (n) => {
+  const str = n + "";
+  const last = str.slice(-4);
+  // console.log(last);
+  return last.padStart(str.length, "*");
+};
+console.log(cardNumber(123456987));
+console.log(cardNumber(4456255648845));
+
+//repting string
+console.log(msg.repeat(5));
+
+//challenge 4
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+//newName.push(n.replace(n[0], n[0].toUpperCase()));
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+
+  const rows = text.split("\n");
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    // console.log(first, second);
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${"✅".repeat(i + 1)}`);
+  }
+});
+
+// ankit_Kumar
+//      rohit_singh
+//  Nikhil_KUMAR
+//             DDD_RRRR
